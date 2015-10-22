@@ -25,7 +25,7 @@ H(1,2) = sum(sum((steepest1.*steepest2),1),2);
 H(2,1) = H(1,2);
 H(2,2) = sum(sum((steepest2.^2),1),2);
 invH = inv(H);
-th=0.0001;
+th=0.02;
 %Iteration Steps
 while norm(dp)>th
 utemp=p(1)*ones(size(x,1), size(x,2));
