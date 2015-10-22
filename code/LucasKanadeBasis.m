@@ -41,7 +41,7 @@ It1W(isnan(It1W))=0;
 % It1W = It1(rect(2)+floor(p(2)) : rect(4)+floor(p(2)), rect(1) +floor(p(1)) : rect(3) +floor(p(1)));
 appearance_correction=zeros(size(bases,1),size(bases,2));
 for i=1:size(bases,3)
-w(i,1) = round((sum(diag(bases(:,:,i)'*(It1W - T)))*100)/100);
+w(i,1) = 1.5*round((sum(diag(bases(:,:,i)'*(It1W - T)))*100)/100);
 appearance_correction = appearance_correction + w(i,1)*bases(:,:,i);
 end
 err_image = It1W - T - appearance_correction;
