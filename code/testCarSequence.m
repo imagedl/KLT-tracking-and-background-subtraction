@@ -3,7 +3,7 @@ close all
 carseq = load('../data/sylvextseq.mat');
 % rects(1,1:4)=[60,117,146,152];
 
-rects(1,1:4)= [122, 59, 169, 104];
+ rects(1,1:4)= [122, 59, 169, 104];
 
 figure(2)
 hold on

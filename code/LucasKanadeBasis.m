@@ -16,7 +16,7 @@ appearance_correction=zeros(size(bases,1),size(bases,2));
 JacobianW=[1,0;0,1];
 [gradTx,gradTy] = imgradientxy(T); %------------>Try Diffferent gradient 'methods'
 steepest1 = gradTx*JacobianW(1,1) + gradTy*JacobianW(2,1); % first element of gradientT*JacobW for all pixels
-steepest2 = (JacobianW(2,1) + JacobianW(2,2))*gradTy; % second element of gradientT*JacobW for all pixels
+steepest2 = JacobianW(1,2)*gradTx + JacobianW(2,2)*gradTy; % second element of gradientT*JacobW for all pixels
     %-->Calculating the Hessian Matriix
     %-->For Each pixel Hessian will be of form (steepest1(pixel)^2 steepest1(pixel)*steepest2(pixel);
     %                                            steepest1(pixel)*steepest2(pixel)
