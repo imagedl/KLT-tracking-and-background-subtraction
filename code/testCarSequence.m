@@ -1,9 +1,9 @@
 close all
 %Load File
-carseq = load('../data/sylvextseq.mat');
-% rects(1,1:4)=[60,117,146,152];
+carseq = load('../data/carseq.mat');
+ rects(1,1:4)=[60,117,146,152];
 
- rects(1,1:4)= [122, 59, 169, 104];
+%  rects(1,1:4)= [122, 59, 169, 104];
 
 figure(2)
 hold on
@@ -15,9 +15,9 @@ It=carseq.frames(:,:,i);
 
 im = insertShape(It,'rectangle', [rects(i,1),rects(i,2), rects(i,3)-rects(i,1),rects(i,4)-rects(i,2)], 'LineWidth', 3);
 imshow(im);
-if(i==1 || i==100|| i==200 || i==300 || i==400)
+if(i==1 || i==4|| i==100|| i==125|| i==200 || i==300 || i==380||i==400)
 imnum= i;
-imname=strcat('../results/frame', i, '.jpg');
+imname=strcat('../results/carseqframe', char(i), '.jpg');
 imwrite(im, imname, 'jpg');
 end
 It1=carseq.frames(:,:,i+1);
