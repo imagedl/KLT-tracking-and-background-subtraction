@@ -18,7 +18,7 @@ for i=1:size(sylvseq.frames,3)-1
 It=sylvseq.frames(:,:,i);
 
 im = insertShape(It,'rectangle', [rects(i,1),rects(i,2), rects(i,3)-rects(i,1),rects(i,4)-rects(i,2)], 'Color', 'yellow', 'LineWidth', 3);
-im = insertShape(im,'rectangle', [rects2(i,1),rects2(i,2), rects2(i,3)-rects2(i,1),rects2(i,4)-rects2(i,2)], 'Color', 'green', 'LineWidth', 3);
+im = insertShape(It,'rectangle', [rects2(i,1),rects2(i,2), rects2(i,3)-rects2(i,1),rects2(i,4)-rects2(i,2)], 'Color', 'green', 'LineWidth', 3);
 imshow(im);
 % if(i==1 || i==100|| i==200 || i==300 || i==400)
 % imnum= i;
@@ -29,7 +29,7 @@ It1=sylvseq.frames(:,:,i+1);
 [u,v] = LucasKanadeBasis(It, It1, rects(i,1:4), bases);
 rects(i+1,1:4)=  rects(i,1:4) +round([u,v,u,v]);
 [ustar,vstar]=LucasKanade(It,It1, rects2(i,1:4));
-rects2(i+1,1:4)= rects2(i,1:4) +round([ustar,vstar,ustar,vstar]);
+rects2(i+1,1:4)= rects2(i,1:4) +round([u,v,u,v]);
 
 end
 save('../results/sylvseqrects.mat', 'rects'); 
