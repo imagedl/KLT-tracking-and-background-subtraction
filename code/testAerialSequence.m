@@ -6,12 +6,12 @@ for i=1:size(aerialseq.frames,3)-1
  mask(:,:,i) = SubtractDominantMotion(aerialseq.frames(:,:,i), aerialseq.frames(:,:,i+1));
  imshow(imfuse(mask(:,:,i),aerialseq.frames(:,:,i)));
 
-% imshow(aerialseq.frames(:,:,i))
-if(i==30 || i==60|| i==90 || i==120)
-imnum= i;
-imname=strcat('../results/aerialframe', i, '.jpg');
-imwrite(imfuse(mask(:,:,i),aerialseq.frames(:,:,i)), imname, 'jpg');
- end
+% if(i==30 || i==60|| i==90 || i==120)
+% 
+% imname=strcat('../results/aerialseq_frame', 'i', '.jpg');
+% imwrite(imfuse(mask(:,:,i),aerialseq.frames(:,:,i)), imname, 'jpg');
+% end 
 end
+
 
 % save('../results/mask.mat', 'mask');

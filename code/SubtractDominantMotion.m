@@ -8,18 +8,11 @@ image2=im2double(image2);
 
 image2W = interp2(image2, M(1,1)*x + M(1,2)*y + M(1,3), M(2,1)*x + M(2,2)*y + M(2,3), 'cubic');
 
-A = image2W - image1;%Do Some imerode stuffffffff
+A = image2W - image1;
 A(isnan(A))=0;
-dilatemask = ones(3); dilatemask(5) = 0; % 3x3 max
+dilatemask = ones(3); dilatemask(5) = 0; % 3x3 mask
 
 mask = imdilate(A,dilatemask);
-% mask(mask>=0.03)=1;
-% mask(mask<=0.03)=0;
-
-
-% maskbin(isnan(maskbin))=0;
-% se = strel('ball',5,5);
-% mask = imerode(maskbin, se);
 
 
 

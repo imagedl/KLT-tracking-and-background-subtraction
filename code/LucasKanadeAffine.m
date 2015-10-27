@@ -9,11 +9,10 @@ dp=[1;1;1;1;1;1];
 M=[1 + p(1), p(3), p(5);
    p(2), 1+p(4), p(6);
    0    ,  0,      1];
-% T=It(rect(2):rect(4), rect(1): rect(3));
-% Itrect=It1(rect(2):rect(4), rect(1):rect(3));
+
 [x,y]=meshgrid(1:size(It,2), 1:size(It,1));
 %Pre-computation Steps
-% JacobianW=[1,0;0,1];
+
 [Ix,Iy] = imgradientxy(It); %------------>Try Diffferent gradient 'methods'
 s1 = Ix.*x; % first element of gradientT*JacobW for all pixels
 s2 = Iy.*x;% second element of gradientT*JacobW for all pixels
